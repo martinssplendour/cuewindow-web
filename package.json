@@ -1,0 +1,9 @@
+{
+  "name": "cuewindow-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/render-build.js",
+    "check": "node --check scripts/render-build.js && node --check public/site.js"
+  }
+}

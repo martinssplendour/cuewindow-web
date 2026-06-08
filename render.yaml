@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: cuewindow-web
+    runtime: static
+    buildCommand: npm run build
+    staticPublishPath: public
+    envVars:
+      - key: CUEWINDOW_SUPABASE_URL
+        sync: false
+      - key: CUEWINDOW_SUPABASE_ANON_KEY
+        sync: false

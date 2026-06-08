@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard | CueWindow</title>
+    <link rel="icon" href="/assets/brand/cuewindow-favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="site-brand" href="/"><img src="/assets/brand/cuewindow-logo-mark.svg" alt="" /><span>CueWindow</span></a>
+      <nav class="site-nav" aria-label="Main navigation"><a href="/download/">Download</a><a href="/dashboard/" aria-current="page">Dashboard</a><a href="/support/">Support</a></nav>
+      <div class="site-actions"><a class="button-outline" href="/download/">Download app</a></div>
+    </header>
+    <main class="page-shell">
+      <section class="page-hero">
+        <p class="eyebrow">Dashboard</p>
+        <h1>Your CueWindow account.</h1>
+        <p>Manage your account entry point and download the desktop app.</p>
+      </section>
+      <section id="dashboardSignedOut" class="dashboard-card">
+        <h1>Sign in required</h1>
+        <p>Sign in to view your account and download CueWindow.</p>
+        <div class="form">
+          <a class="button" href="/sign-in/">Sign in</a>
+          <a class="button-outline" href="/sign-up/">Create account</a>
+        </div>
+      </section>
+      <section id="dashboardSignedIn" class="dashboard-grid is-hidden">
+        <article class="dashboard-card">
+          <h1>Account</h1>
+          <div class="account-row"><strong>Name</strong><span id="dashboardName">CueWindow user</span></div>
+          <div class="account-row"><strong>Email</strong><span id="dashboardEmail">No email available</span></div>
+          <div class="account-row"><strong>User ID</strong><span id="dashboardUserId">Not available</span></div>
+          <div class="form"><button class="button-danger" type="button" data-sign-out>Sign out</button></div>
+        </article>
+        <article class="dashboard-card">
+          <h1>Get started</h1>
+          <p>Install the desktop app, then sign in with this same account.</p>
+          <div class="form"><a class="button" href="/download/">Download app</a></div>
+        </article>
+      </section>
+      <div class="notice" id="siteNotice" hidden></div>
+    </main>
+    <script src="/config.js"></script>
+    <script src="/site.js"></script>
+  </body>
+</html>

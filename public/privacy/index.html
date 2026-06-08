@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy | CueWindow</title>
+    <link rel="icon" href="/assets/brand/cuewindow-favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="site-brand" href="/"><img src="/assets/brand/cuewindow-logo-mark.svg" alt="" /><span>CueWindow</span></a>
+      <nav class="site-nav" aria-label="Main navigation"><a href="/download/">Download</a><a href="/privacy/" aria-current="page">Privacy</a><a href="/terms/">Terms</a><a href="/support/">Support</a></nav>
+      <div class="site-actions"><a class="button-outline" href="/sign-in/">Sign in</a></div>
+    </header>
+    <main class="page-shell">
+      <section class="page-hero">
+        <p class="eyebrow">Privacy</p>
+        <h1>Control what CueWindow listens to and keeps.</h1>
+        <p>CueWindow is designed around explicit sessions, user-owned profiles, and clear data boundaries.</p>
+      </section>
+      <section class="grid-2">
+        <article class="content-card">
+          <h2>Audio processing</h2>
+          <p>CueWindow listens only after a user starts a session. Audio is processed to create live transcripts and response suggestions.</p>
+          <h2>Transcripts and responses</h2>
+          <p>Session transcripts, generated responses, and conversation memory are stored only for signed-in users and are separated by account.</p>
+          <h2>Files and profiles</h2>
+          <p>Uploaded CVs, meeting documents, and extracted profile context are tied to the signed-in account and used to guide generated responses when relevant.</p>
+        </article>
+        <article class="content-card">
+          <h2>What is not allowed</h2>
+          <p>CueWindow should not be used to fabricate credentials, impersonate another person, bypass platform rules, or misrepresent experience.</p>
+          <h2>Account control</h2>
+          <p>Authentication is handled through Supabase Auth. Password reset and account sessions are managed through secure token flows.</p>
+          <h2>Questions</h2>
+          <p>For privacy requests, account deletion, or data questions, contact support from the support page.</p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

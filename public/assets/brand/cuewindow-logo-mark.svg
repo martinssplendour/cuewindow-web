@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">CueWindow mark</title>
+  <desc id="desc">A rounded C with prompt lines and a transparent window pane.</desc>
+  <defs>
+    <linearGradient id="cw-stroke" x1="72" y1="440" x2="390" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6d28ff"/>
+      <stop offset="0.48" stop-color="#0b7cff"/>
+      <stop offset="1" stop-color="#06b6f0"/>
+    </linearGradient>
+    <linearGradient id="cw-pane" x1="348" y1="116" x2="476" y2="398" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d9f3ff" stop-opacity="0.9"/>
+      <stop offset="0.5" stop-color="#60a5fa" stop-opacity="0.56"/>
+      <stop offset="1" stop-color="#2563eb" stop-opacity="0.78"/>
+    </linearGradient>
+    <linearGradient id="cw-line" x1="226" y1="240" x2="322" y2="296" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0b7cff"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <rect x="74" y="76" width="302" height="360" rx="82" fill="#ffffff" stroke="url(#cw-stroke)" stroke-width="24"/>
+  <path d="M304 174c-23-22-59-31-94-20-46 15-76 58-76 106 0 55 42 102 98 108 30 3 58-7 78-26" fill="none" stroke="url(#cw-stroke)" stroke-width="48" stroke-linecap="round"/>
+  <path d="M358 144l90-58c10-7 24 1 24 13v314c0 12-14 20-24 13l-90-58z" fill="url(#cw-pane)" stroke="#0b7cff" stroke-width="14" stroke-linejoin="round"/>
+  <path d="M366 158l78-50v296l-78-50z" fill="#ffffff" opacity="0.22"/>
+  <rect x="220" y="225" width="90" height="24" rx="12" fill="#0b7cff"/>
+  <rect x="220" y="273" width="90" height="24" rx="12" fill="url(#cw-line)"/>
+  <circle cx="220" cy="334" r="16" fill="#7c3aed"/>
+</svg>
