@@ -179,7 +179,8 @@
 
     setLoading(form, true);
     try {
-      const redirectTo = `${window.location.origin}/reset-password/`;
+      const configuredSiteUrl = String(state.config?.siteUrl || "").replace(/\/+$/, "");
+      const redirectTo = configuredSiteUrl ? `${configuredSiteUrl}/reset-password` : `${window.location.origin}/reset-password`;
       const response = await fetch(authUrl(`recover?redirect_to=${encodeURIComponent(redirectTo)}`), {
         method: "POST",
         headers: publicHeaders(),
@@ -259,12 +260,29 @@
     showNotice("Signed out.");
   }
 
+  const svgEye = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>`;
+  const svgEyeOff = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>`;
+
+  function setupPasswordToggles() {
+    document.querySelectorAll("[data-toggle-password]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const input = button.closest(".password-field")?.querySelector("input");
+        if (!input) return;
+        const visible = input.type === "text";
+        input.type = visible ? "password" : "text";
+        button.setAttribute("aria-label", visible ? "Show password" : "Hide password");
+        button.innerHTML = visible ? svgEye : svgEyeOff;
+      });
+    });
+  }
+
   function boot() {
     document.querySelectorAll("[data-sign-in-form]").forEach((form) => form.addEventListener("submit", signIn));
     document.querySelectorAll("[data-sign-up-form]").forEach((form) => form.addEventListener("submit", signUp));
     document.querySelectorAll("[data-reset-request-form]").forEach((form) => form.addEventListener("submit", requestPasswordReset));
     document.querySelectorAll("[data-new-password-form]").forEach((form) => form.addEventListener("submit", setNewPassword));
     document.querySelectorAll("[data-sign-out]").forEach((button) => button.addEventListener("click", signOut));
+    setupPasswordToggles();
 
     const recoverySession = recoverySessionFromUrl();
     if (recoverySession) {

@@ -29,8 +29,8 @@
           </form>
           <form class="form is-hidden" id="newPasswordForm" data-new-password-form>
             <h1>Set new password</h1>
-            <label>New password <input name="password" type="password" autocomplete="new-password" placeholder="At least 8 characters" required /></label>
-            <label>Confirm password <input name="confirmPassword" type="password" autocomplete="new-password" placeholder="Repeat your password" required /></label>
+            <label>New password <div class="password-field"><input name="password" type="password" autocomplete="new-password" placeholder="At least 8 characters" required /><button type="button" class="password-toggle" data-toggle-password aria-label="Show password"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></div></label>
+            <label>Confirm password <div class="password-field"><input name="confirmPassword" type="password" autocomplete="new-password" placeholder="Repeat your password" required /><button type="button" class="password-toggle" data-toggle-password aria-label="Show password"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></div></label>
             <button class="button" type="submit">Update password</button>
           </form>
           <div class="notice" id="siteNotice" hidden></div>

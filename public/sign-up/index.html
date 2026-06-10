@@ -26,7 +26,7 @@
           <form class="form" data-sign-up-form>
             <label>Name <input name="name" type="text" autocomplete="name" placeholder="Alex Morgan" required /></label>
             <label>Email address <input name="email" type="email" autocomplete="email" placeholder="you@example.com" required /></label>
-            <label>Password <input name="password" type="password" autocomplete="new-password" placeholder="At least 8 characters" required /></label>
+            <label>Password <div class="password-field"><input name="password" type="password" autocomplete="new-password" placeholder="At least 8 characters" required /><button type="button" class="password-toggle" data-toggle-password aria-label="Show password"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></div></label>
             <button class="button" type="submit">Create account</button>
             <p>Already have an account? <a class="inline-link" href="/sign-in/">Sign in</a></p>
           </form>

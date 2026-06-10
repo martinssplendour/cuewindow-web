@@ -154,6 +154,10 @@ button, input, textarea { font: inherit; }
 .inline-link { color: var(--blue); font-weight: 800; }
 .notice { margin-top: 18px; padding: 14px 16px; border: 1px solid #bfdbfe; border-radius: 12px; color: #1e3a8a; background: #eff6ff; }
 .notice.error { color: #991b1b; border-color: #fecaca; background: #fff1f2; }
+.password-field { position: relative; }
+.password-field > input { padding-right: 46px; }
+.password-toggle { position: absolute; right: 13px; top: 50%; transform: translateY(-50%); background: none; border: none; padding: 4px; cursor: pointer; color: var(--muted); display: flex; align-items: center; line-height: 1; }
+.password-toggle:hover { color: var(--ink); }
 .release-list { display: grid; gap: 12px; margin: 22px 0 0; padding: 0; list-style: none; }
 .release-list li { display: flex; justify-content: space-between; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); }
 .legal-stack { display: grid; gap: 18px; }
