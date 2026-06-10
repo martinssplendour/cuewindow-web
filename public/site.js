@@ -198,13 +198,44 @@
   function recoverySessionFromUrl() {
     const hash = new URLSearchParams(String(window.location.hash || "").replace(/^#/, ""));
     const accessToken = hash.get("access_token") || "";
-    if (!accessToken) return null;
+    if (!accessToken || hash.get("type") !== "recovery") return null;
     return {
       accessToken,
       refreshToken: hash.get("refresh_token") || "",
       expiresAt: Number(hash.get("expires_at")) || null,
       tokenType: hash.get("token_type") || "bearer",
     };
+  }
+
+  async function handleAuthCallback() {
+    const hash = new URLSearchParams(String(window.location.hash || "").replace(/^#/, ""));
+    const accessToken = hash.get("access_token") || "";
+    if (!accessToken || hash.get("type") === "recovery" || !supabaseConfigured()) return;
+    const session = {
+      accessToken,
+      refreshToken: hash.get("refresh_token") || "",
+      expiresAt: Number(hash.get("expires_at")) || null,
+      tokenType: hash.get("token_type") || "bearer",
+    };
+    try {
+      const response = await fetch(authUrl("user"), {
+        headers: { apikey: state.config.supabaseAnonKey, Authorization: `Bearer ${accessToken}` },
+      });
+      if (response.ok) {
+        const user = await response.json();
+        persistAuth(normalizeUser(user), session);
+        history.replaceState(null, "", window.location.pathname);
+      }
+    } catch {
+      // ignore
+    }
+  }
+
+  function signInWithGoogle() {
+    if (!supabaseConfigured()) return showNotice("Auth not configured.", "error");
+    const configuredSiteUrl = String(state.config?.siteUrl || "").replace(/\/+$/, "");
+    const origin = configuredSiteUrl || window.location.origin;
+    window.location.href = authUrl(`authorize?provider=google&redirect_to=${encodeURIComponent(`${origin}/dashboard/`)}`);
   }
 
   async function setNewPassword(event) {
@@ -223,12 +254,9 @@
         headers: userHeaders(),
         body: JSON.stringify({ password }),
       });
-      const user = await parseResponse(response, "Could not update password");
-      persistAuth(normalizeUser(user), state.session);
-      showNotice("Password updated. Redirecting to your dashboard...");
-      setTimeout(() => {
-        window.location.href = "/dashboard/";
-      }, 700);
+      await parseResponse(response, "Could not update password");
+      form.classList.add("is-hidden");
+      $("#resetSuccess")?.classList.remove("is-hidden");
     } catch (error) {
       showNotice(error.message, "error");
     } finally {
@@ -282,6 +310,7 @@
     document.querySelectorAll("[data-reset-request-form]").forEach((form) => form.addEventListener("submit", requestPasswordReset));
     document.querySelectorAll("[data-new-password-form]").forEach((form) => form.addEventListener("submit", setNewPassword));
     document.querySelectorAll("[data-sign-out]").forEach((button) => button.addEventListener("click", signOut));
+    document.querySelectorAll("[data-google-signin]").forEach((button) => button.addEventListener("click", signInWithGoogle));
     setupPasswordToggles();
 
     const recoverySession = recoverySessionFromUrl();
@@ -291,9 +320,10 @@
       $("#resetRequestForm")?.classList.add("is-hidden");
       $("#newPasswordForm")?.classList.remove("is-hidden");
       history.replaceState(null, "", "/reset-password/");
+      renderDashboard();
+    } else {
+      handleAuthCallback().then(renderDashboard).catch(renderDashboard);
     }
-
-    renderDashboard();
   }
 
   boot();

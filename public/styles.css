@@ -158,6 +158,15 @@ button, input, textarea { font: inherit; }
 .password-field > input { padding-right: 46px; }
 .password-toggle { position: absolute; right: 13px; top: 50%; transform: translateY(-50%); background: none; border: none; padding: 4px; cursor: pointer; color: var(--muted); display: flex; align-items: center; line-height: 1; }
 .password-toggle:hover { color: var(--ink); }
+.auth-divider { display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 13px; margin: 4px 0; }
+.auth-divider::before, .auth-divider::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.button-google { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; min-height: 50px; padding: 0 15px; background: #fff; border: 1px solid #cad8ee; border-radius: 10px; font: inherit; font-weight: 600; color: var(--ink); cursor: pointer; transition: background 0.15s, border-color 0.15s; }
+.button-google:hover { background: #f0f6ff; border-color: #b0c8ee; }
+.reset-success { text-align: center; padding: 20px 0 8px; }
+.reset-success-icon { color: #10b981; margin-bottom: 16px; }
+.reset-success h2 { margin: 0 0 12px; font-size: 26px; }
+.reset-success p { color: var(--muted); margin: 0 0 24px; line-height: 1.6; }
+.reset-success .button-outline { display: inline-block; }
 .release-list { display: grid; gap: 12px; margin: 22px 0 0; padding: 0; list-style: none; }
 .release-list li { display: flex; justify-content: space-between; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); }
 .legal-stack { display: grid; gap: 18px; }
