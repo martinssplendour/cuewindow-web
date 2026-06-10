@@ -7,6 +7,7 @@ const configPath = path.join(publicDir, "config.js");
 const config = {
   supabaseUrl: process.env.CUEWINDOW_SUPABASE_URL || process.env.SUPABASE_URL || "",
   supabaseAnonKey: process.env.CUEWINDOW_SUPABASE_ANON_KEY || process.env.SUPABASE_ANON_KEY || "",
+  siteUrl: process.env.CUEWINDOW_SITE_URL || "",
 };
 
 fs.mkdirSync(publicDir, { recursive: true });

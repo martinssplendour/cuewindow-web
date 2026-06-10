@@ -1,4 +1,5 @@
 window.CUEWINDOW_PUBLIC_CONFIG = {
   supabaseUrl: "https://your-project.supabase.co",
-  supabaseAnonKey: "your-public-anon-key"
+  supabaseAnonKey: "your-public-anon-key",
+  siteUrl: "https://your-app.example.com"
 };
