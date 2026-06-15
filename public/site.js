@@ -143,9 +143,11 @@
     const name = field(form, "name").value.trim();
     const email = field(form, "email").value.trim().toLowerCase();
     const password = field(form, "password").value;
+    const confirmPassword = field(form, "confirmPassword").value;
     if (!name) return showNotice("Enter your name.", "error");
     if (!email || !email.includes("@")) return showNotice("Enter a valid email address.", "error");
     if (password.length < 8) return showNotice("Use a password with at least 8 characters.", "error");
+    if (password !== confirmPassword) return showNotice("Passwords do not match.", "error");
     if (!supabaseConfigured()) return showNotice("Supabase is not configured for this website yet.", "error");
 
     setLoading(form, true);
