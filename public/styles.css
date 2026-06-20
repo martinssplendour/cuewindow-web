@@ -147,6 +147,7 @@ button, input, textarea { font: inherit; }
 .pricing-kicker { color: var(--blue); font-size: 13px; font-weight: 850; text-transform: uppercase; }
 .pricing-price { margin: 0; color: var(--ink) !important; font-size: 40px; font-weight: 900; line-height: 1; }
 .pricing-price span { color: var(--muted); font-size: 15px; font-weight: 800; }
+.pricing-renewal { margin: 0; color: #3d4d68 !important; font-size: 13px; font-weight: 750; line-height: 1.45; }
 .pricing-card ul { display: grid; gap: 10px; margin: 0; padding-left: 18px; color: var(--muted); line-height: 1.5; }
 
 .form { display: grid; gap: 18px; margin-top: 28px; }
