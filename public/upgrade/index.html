@@ -18,18 +18,47 @@
       </nav>
       <div class="site-actions"><a class="button-outline" href="/sign-in/">Sign in</a></div>
     </header>
-    <main class="page-shell">
-      <section class="page-hero">
-        <p class="eyebrow">Plans</p>
-        <h1>Upgrade CueWindow.</h1>
-        <p>Choose Free Plan: 3 sessions included, an individual subscription, a heavier freelancer plan, or a company onboarding path.</p>
+    <main class="page-shell upgrade-shell">
+      <section class="upgrade-hero">
+        <div class="upgrade-hero-copy">
+          <p class="eyebrow">Upgrade</p>
+          <h1>Choose the plan that matches your call volume.</h1>
+          <p>
+            Start with three free live sessions, then upgrade when CueWindow becomes part of
+            your interviews, client calls, or team workflow.
+          </p>
+          <div class="upgrade-assurances" aria-label="Billing assurances">
+            <span>Secure Stripe checkout</span>
+            <span>Cancel anytime</span>
+            <span>Monthly usage resets</span>
+          </div>
+        </div>
+        <article class="upgrade-recommendation" aria-label="Recommended plan">
+          <div class="pricing-card-head">
+            <span class="pricing-kicker">Recommended</span>
+            <span class="pricing-badge">Most popular</span>
+          </div>
+          <h2>Premium Plan</h2>
+          <p class="pricing-price">&pound;10<span>/month</span></p>
+          <p class="pricing-summary">A practical upgrade for regular interviews and recurring live calls.</p>
+          <dl class="usage-list">
+            <div><dt>Transcription</dt><dd>600 minutes/month</dd></div>
+            <div><dt>AI responses</dt><dd>1,000/month</dd></div>
+            <div><dt>Session length</dt><dd>Up to 120 minutes</dd></div>
+          </dl>
+          <p class="pricing-renewal">Auto-renews monthly. Cancel anytime from Manage billing.</p>
+          <button class="button" type="button" data-checkout-plan="premium">Upgrade to Premium</button>
+        </article>
       </section>
-      <section class="pricing-grid">
+
+      <section class="pricing-grid upgrade-plans" aria-label="CueWindow plans">
         <article class="pricing-card">
-          <span class="pricing-kicker">Free</span>
+          <div class="pricing-card-head">
+            <span class="pricing-kicker">Free</span>
+          </div>
           <h2>Free Plan</h2>
-          <p class="pricing-price">£0</p>
-          <p>Free Plan: 3 sessions included.</p>
+          <p class="pricing-price">&pound;0</p>
+          <p class="pricing-summary">Try CueWindow on a few calls before choosing a paid plan.</p>
           <ul>
             <li>3 live sessions per account</li>
             <li>20-minute max session length</li>
@@ -38,10 +67,13 @@
           <a class="button-outline" href="/sign-up/">Start free</a>
         </article>
         <article class="pricing-card is-featured">
-          <span class="pricing-kicker">Premium</span>
+          <div class="pricing-card-head">
+            <span class="pricing-kicker">Premium</span>
+            <span class="pricing-badge">Best value</span>
+          </div>
           <h2>Premium Plan</h2>
-          <p class="pricing-price">£10<span>/month</span></p>
-          <p>For individuals using CueWindow in interviews and regular calls.</p>
+          <p class="pricing-price">&pound;10<span>/month</span></p>
+          <p class="pricing-summary">For individuals using CueWindow in interviews and regular calls.</p>
           <ul>
             <li>600 transcription minutes per month</li>
             <li>1,000 AI responses per month</li>
@@ -51,10 +83,13 @@
           <button class="button" type="button" data-checkout-plan="premium">Upgrade to Premium</button>
         </article>
         <article class="pricing-card">
-          <span class="pricing-kicker">Gold</span>
+          <div class="pricing-card-head">
+            <span class="pricing-kicker">Gold</span>
+            <span class="pricing-badge">4x limits</span>
+          </div>
           <h2>Gold Plan</h2>
-          <p class="pricing-price">£30<span>/month</span></p>
-          <p>For freelancers and consultants with heavier client-facing usage.</p>
+          <p class="pricing-price">&pound;30<span>/month</span></p>
+          <p class="pricing-summary">For freelancers and consultants with heavier client-facing usage.</p>
           <ul>
             <li>2,400 transcription minutes per month</li>
             <li>4,000 AI responses per month</li>
@@ -64,10 +99,12 @@
           <button class="button" type="button" data-checkout-plan="gold">Upgrade to Gold</button>
         </article>
         <article class="pricing-card">
-          <span class="pricing-kicker">Enterprise</span>
+          <div class="pricing-card-head">
+            <span class="pricing-kicker">Enterprise</span>
+          </div>
           <h2>Enterprise Plan</h2>
           <p class="pricing-price">Custom</p>
-          <p>For companies that need team access, invoicing, and custom controls.</p>
+          <p class="pricing-summary">For companies that need team access, invoicing, and custom controls.</p>
           <ul>
             <li>Manual company onboarding</li>
             <li>Higher pooled usage limits</li>
@@ -75,6 +112,21 @@
           </ul>
           <a class="button-outline" href="mailto:support@splendoure.com?subject=CueWindow%20Enterprise%20Plan">Contact sales</a>
         </article>
+      </section>
+
+      <section class="upgrade-support-strip" aria-label="Upgrade help">
+        <div>
+          <span>Not sure yet?</span>
+          <strong>Start free and keep your account when you upgrade.</strong>
+        </div>
+        <div>
+          <span>Already subscribed?</span>
+          <strong>Manage billing from your CueWindow profile.</strong>
+        </div>
+        <div>
+          <span>Need team rollout?</span>
+          <strong><a href="mailto:support@splendoure.com?subject=CueWindow%20Enterprise%20Plan">Talk to sales</a></strong>
+        </div>
       </section>
       <div class="notice" id="siteNotice" hidden></div>
     </main>

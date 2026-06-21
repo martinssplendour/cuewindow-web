@@ -149,6 +149,33 @@ button, input, textarea { font: inherit; }
 .pricing-price span { color: var(--muted); font-size: 15px; font-weight: 800; }
 .pricing-renewal { margin: 0; color: #3d4d68 !important; font-size: 13px; font-weight: 750; line-height: 1.45; }
 .pricing-card ul { display: grid; gap: 10px; margin: 0; padding-left: 18px; color: var(--muted); line-height: 1.5; }
+.pricing-grid { grid-template-columns: repeat(4, minmax(220px, 1fr)); }
+.pricing-card { grid-template-rows: auto auto auto auto 1fr auto auto; gap: 16px; min-width: 0; }
+.pricing-card-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 28px; }
+.pricing-badge { display: inline-flex; align-items: center; min-height: 28px; padding: 0 10px; color: #0f5132; border: 1px solid #b7e4ca; border-radius: 999px; background: #eaf8f0; font-size: 12px; font-weight: 850; white-space: nowrap; }
+.pricing-summary { margin: 0; min-height: 58px; }
+.pricing-card .button, .pricing-card .button-outline, .upgrade-recommendation .button { width: 100%; }
+.upgrade-shell { width: min(1180px, calc(100vw - 40px)); }
+.upgrade-hero { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(340px, 430px); gap: clamp(24px, 4vw, 48px); align-items: stretch; padding: 50px 0 34px; }
+.upgrade-hero-copy { display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+.upgrade-hero h1 { max-width: 780px; margin: 0; color: var(--ink); font-size: 58px; line-height: 1; letter-spacing: 0; }
+.upgrade-hero-copy > p { max-width: 680px; margin: 22px 0 0; color: var(--muted); font-size: 20px; line-height: 1.55; }
+.upgrade-assurances { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.upgrade-assurances span { display: inline-flex; align-items: center; min-height: 34px; padding: 0 12px; color: #183b2b; border: 1px solid #b7e4ca; border-radius: 999px; background: rgba(234, 248, 240, 0.86); font-size: 13px; font-weight: 850; }
+.upgrade-recommendation { display: grid; gap: 16px; padding: 28px; border: 1px solid rgba(37, 99, 235, 0.34); border-radius: 14px; background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(249, 252, 255, 0.9)), var(--card); box-shadow: 0 30px 90px rgba(37, 99, 235, 0.14); }
+.upgrade-recommendation h2 { margin: 0; font-size: 25px; }
+.usage-list { display: grid; gap: 10px; margin: 0; }
+.usage-list div { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.usage-list div:last-child { border-bottom: 0; }
+.usage-list dt, .usage-list dd { margin: 0; }
+.usage-list dt { color: var(--muted); font-weight: 760; }
+.usage-list dd { color: var(--ink); font-weight: 850; text-align: right; }
+.upgrade-plans { margin-top: 14px; }
+.upgrade-support-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 22px; padding: 20px; border: 1px solid rgba(159, 179, 214, 0.44); border-radius: 12px; background: rgba(255, 255, 255, 0.72); }
+.upgrade-support-strip div { min-width: 0; }
+.upgrade-support-strip span { display: block; margin-bottom: 6px; color: var(--muted); font-size: 13px; font-weight: 850; text-transform: uppercase; }
+.upgrade-support-strip strong { display: block; color: var(--ink); line-height: 1.45; }
+.upgrade-support-strip a { color: var(--blue); }
 
 .form { display: grid; gap: 18px; margin-top: 28px; }
 .form label { display: grid; gap: 8px; color: var(--ink); font-weight: 750; }
@@ -185,8 +212,9 @@ button, input, textarea { font: inherit; }
 @media (max-width: 920px) {
   .site-header { flex-wrap: wrap; }
   .site-nav { order: 3; width: 100%; overflow-x: auto; }
-  .hero, .auth-layout, .download-panel, .dashboard-grid, .support-options, .pricing-grid, .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .hero, .auth-layout, .download-panel, .dashboard-grid, .support-options, .pricing-grid, .upgrade-hero, .upgrade-support-strip, .grid-2, .grid-3 { grid-template-columns: 1fr; }
   .hero { min-height: 0; }
+  .upgrade-hero h1 { font-size: 48px; }
 }
 
 @media (max-width: 620px) {
@@ -194,5 +222,12 @@ button, input, textarea { font: inherit; }
   .site-actions { width: 100%; }
   .site-actions .button, .site-actions .button-outline { flex: 1; }
   .hero-panel, .hero-card-wrap, .section, .page-shell { padding: 34px 20px; width: 100%; }
+  .upgrade-shell { width: min(100%, calc(100vw - 32px)); padding-top: 28px; }
+  .upgrade-hero { padding: 28px 0 24px; }
+  .upgrade-hero h1 { font-size: 38px; }
+  .upgrade-hero-copy > p { font-size: 18px; }
+  .pricing-card, .upgrade-recommendation, .upgrade-support-strip { padding: 22px; }
+  .usage-list div { align-items: flex-start; flex-direction: column; gap: 4px; }
+  .usage-list dd { text-align: left; }
   .product-card, .auth-card, .dashboard-card, .content-card { padding: 24px; }
 }
