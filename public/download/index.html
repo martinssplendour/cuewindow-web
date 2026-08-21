@@ -19,31 +19,42 @@
       <div class="site-actions"><a class="button-outline" href="/sign-in/">Sign in</a></div>
     </header>
     <main class="page-shell">
-      <section class="page-hero">
-        <p class="eyebrow">Download</p>
-        <h1>Install CueWindow for Windows.</h1>
-        <p>The desktop app gives CueWindow the overlay behavior needed for live interviews and meetings.</p>
+      <section class="download-hero">
+        <img class="app-icon" src="/assets/brand/cuewindow-icon.svg" alt="CueWindow app icon" width="96" height="96" />
+        <h1>Download CueWindow</h1>
+        <p>Available for Windows. Your dashboard works from any browser.</p>
+        <a class="button button-lg" href="https://github.com/martinssplendour/cuewindow-web/releases/download/v0.1.18/CueWindow-Windows-Setup-0.1.18.exe" target="_blank" rel="noreferrer">Download for Windows</a>
       </section>
-      <section class="download-panel">
-        <article class="dashboard-card">
-          <h1>Windows desktop app</h1>
-          <p>Download the latest installer, sign in with your CueWindow account, and start a session from your saved profiles.</p>
-          <div class="form">
-            <a class="button" href="https://github.com/martinssplendour/cuewindow-web/releases/download/v0.1.18/CueWindow-Windows-Setup-0.1.18.exe" target="_blank" rel="noreferrer">Download Windows installer</a>
-            <a class="button-outline" href="/dashboard/">Open dashboard</a>
+
+      <div class="download-divider"></div>
+
+      <section class="download-info">
+        <div>
+          <h2>CueWindow Desktop</h2>
+          <p>A fast, focused overlay that listens during interviews and meetings and gives you clear responses without leaving the call.</p>
+        </div>
+        <div class="platform-list">
+          <div class="platform-row">
+            <div class="platform-name">
+              <svg class="platform-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2" /><path d="M8 21h8M12 17v4" /></svg>
+              <span>Windows</span>
+            </div>
+            <a class="button-outline" href="https://github.com/martinssplendour/cuewindow-web/releases/download/v0.1.18/CueWindow-Windows-Setup-0.1.18.exe" target="_blank" rel="noreferrer">Download</a>
           </div>
-          <ul class="release-list">
-            <li><strong>Platform</strong><span>Windows 10 or newer</span></li>
-            <li><strong>Account</strong><span>CueWindow sign-in required</span></li>
-            <li><strong>Backend</strong><span>Supabase-hosted auth and data</span></li>
-            <li><strong>AI responses</strong><span>Generated through hosted functions</span></li>
-          </ul>
-        </article>
-        <article class="release-card">
-          <h3>Release notes</h3>
-          <p>Current builds include profile selection, live session workspace, transcript history, movable teleprompter overlay, Supabase Auth, and hosted response generation.</p>
-        </article>
+          <div class="platform-row">
+            <div class="platform-name">
+              <svg class="platform-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.5 2.5 3.5 6 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-6-3.5-9s1-6.5 3.5-9Z" /></svg>
+              <span>Web app</span>
+            </div>
+            <a class="button-outline" href="/dashboard/">Open</a>
+          </div>
+        </div>
       </section>
+
+      <p class="download-footnote">
+        Sign in with your CueWindow account to start a session from your saved profiles. Auth and data
+        are hosted on Supabase; AI responses are generated through hosted functions.
+      </p>
     </main>
   </body>
 </html>

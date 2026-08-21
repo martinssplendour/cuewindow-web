@@ -204,6 +204,24 @@ button, input, textarea { font: inherit; }
 .reset-success .button-outline { display: inline-block; }
 .release-list { display: grid; gap: 12px; margin: 22px 0 0; padding: 0; list-style: none; }
 .release-list li { display: flex; justify-content: space-between; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+
+.download-hero { width: min(640px, 100%); margin: 0 auto; padding: clamp(48px, 8vw, 88px) 0 0; text-align: center; }
+.app-icon { display: block; width: 96px; height: 96px; margin: 0 auto; border-radius: 26px; box-shadow: 0 24px 60px rgba(31, 55, 100, 0.22); }
+.download-hero h1 { margin: 28px 0 0; color: var(--ink); font-size: clamp(36px, 5vw, 48px); line-height: 1.08; }
+.download-hero p { margin: 14px 0 0; color: var(--muted); font-size: 18px; }
+.download-hero .button-lg { margin-top: 30px; }
+.button-lg { min-height: 52px; padding: 0 30px; font-size: 16px; }
+.download-divider { width: min(720px, 100%); margin: 56px auto 0; border-top: 1px solid var(--line); }
+.download-info { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr); gap: 40px; width: min(720px, 100%); margin: 56px auto 0; align-items: start; }
+.download-info h2 { margin: 0; color: var(--ink); font-size: 17px; }
+.download-info > div:first-child p { margin: 10px 0 0; color: var(--muted); font-size: 15px; line-height: 1.6; }
+.platform-list { display: grid; }
+.platform-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.platform-list .platform-row:first-child { border-top: 1px solid var(--line); }
+.platform-name { display: flex; align-items: center; gap: 12px; color: var(--ink); font-weight: 700; font-size: 15px; }
+.platform-icon { width: 20px; height: 20px; flex-shrink: 0; stroke: var(--muted); stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.platform-row .button-outline { min-height: 38px; padding: 0 16px; font-size: 14px; }
+.download-footnote { width: min(560px, 100%); margin: 48px auto 0; padding-bottom: clamp(48px, 8vw, 88px); color: var(--muted); font-size: 14px; line-height: 1.6; text-align: center; }
 .legal-stack { display: grid; gap: 18px; }
 .site-footer { display: flex; justify-content: space-between; gap: 20px; padding: 26px clamp(20px, 5vw, 72px); color: var(--muted); border-top: 1px solid rgba(166, 184, 216, 0.36); background: rgba(255, 255, 255, 0.65); }
 .site-footer nav { display: flex; gap: 18px; }
@@ -212,7 +230,7 @@ button, input, textarea { font: inherit; }
 @media (max-width: 920px) {
   .site-header { flex-wrap: wrap; }
   .site-nav { order: 3; width: 100%; overflow-x: auto; }
-  .hero, .auth-layout, .download-panel, .dashboard-grid, .support-options, .pricing-grid, .upgrade-hero, .upgrade-support-strip, .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .hero, .auth-layout, .download-panel, .download-info, .dashboard-grid, .support-options, .pricing-grid, .upgrade-hero, .upgrade-support-strip, .grid-2, .grid-3 { grid-template-columns: 1fr; }
   .hero { min-height: 0; }
   .upgrade-hero h1 { font-size: 48px; }
 }

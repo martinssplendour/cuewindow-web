@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">CueWindow app icon</title>
+  <desc id="desc">CueWindow app icon on a rounded gradient tile.</desc>
+  <defs>
+    <linearGradient id="cw-icon-bg" x1="146" y1="900" x2="836" y2="104" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5b21ff"/>
+      <stop offset="0.48" stop-color="#116dff"/>
+      <stop offset="1" stop-color="#06b6f0"/>
+    </linearGradient>
+    <linearGradient id="cw-icon-pane" x1="636" y1="260" x2="874" y2="760" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="0.5" stop-color="#bfdbfe" stop-opacity="0.56"/>
+      <stop offset="1" stop-color="#60a5fa" stop-opacity="0.78"/>
+    </linearGradient>
+  </defs>
+  <rect x="96" y="96" width="832" height="832" rx="220" fill="url(#cw-icon-bg)"/>
+  <rect x="222" y="198" width="526" height="628" rx="144" fill="#ffffff" opacity="0.96"/>
+  <path d="M596 352c-50-46-129-64-204-39-102 33-168 128-168 235 0 123 94 225 217 238 66 7 128-15 172-57" fill="none" stroke="url(#cw-icon-bg)" stroke-width="88" stroke-linecap="round"/>
+  <path d="M720 300l160-104c21-14 48 2 48 27v578c0 25-27 41-48 27l-160-104z" fill="url(#cw-icon-pane)" stroke="#ffffff" stroke-width="26" stroke-linejoin="round"/>
+  <rect x="430" y="468" width="150" height="42" rx="21" fill="#116dff"/>
+  <rect x="430" y="554" width="150" height="42" rx="21" fill="#7c3aed"/>
+  <circle cx="430" cy="666" r="28" fill="#7c3aed"/>
+</svg>
